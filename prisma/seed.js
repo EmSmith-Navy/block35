@@ -2,9 +2,9 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 async function main() {
-  const users = [
-    { email: "john@example.com", name: "John Doe" },
-    { email: "jane@example.com", name: "Jane Smith" },
+  const employees = [
+    { name: "John Doe" },
+    { name: "Jane Smith" },
     { name: "Bob Johnson" },
     { name: "Alice Williams" },
     { name: "Charlie Brown" },
@@ -15,9 +15,9 @@ async function main() {
     { name: "Steve Rogers" },
   ];
 
-  for (const user of users) {
-    await prisma.user.create({
-      data: user,
+  for (const employee of employees) {
+    await prisma.employee.create({
+      data: employee,
     });
   }
 }
